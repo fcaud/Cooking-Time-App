@@ -12,6 +12,7 @@ export default function ComponentInput() {
       </div>
       <div className="component-time-inputs">
         <div className="row">
+          <div className="col-3"></div>
           <div className="col">
             <h3>Prep Time</h3>
           </div>
