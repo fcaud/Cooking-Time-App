@@ -1,0 +1,14 @@
+.Header {
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  background-color: #97bfb4;
+  color: #dd4a48;
+}
+.Header h1 {
+  font-family: "Pushster", cursive;
+}
+
+.Header h2 {
+  color: #f5eedc;
+}

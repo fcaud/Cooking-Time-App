@@ -3,7 +3,7 @@ import "./ComponentInput.css";
 
 export default function ComponentInput() {
   return (
-    <div className="component-input-module">
+    <div className="ComponentInput">
       <div className="component-text-input">
         <form>
           <input type="text" placeholder="Type meal component here..."></input>
@@ -12,7 +12,7 @@ export default function ComponentInput() {
       </div>
       <div className="component-time-inputs">
         <div className="row">
-          <div className="col-4"></div>
+          <div className="col-5"></div>
           <div className="col-1">
             <h3>Prep Time</h3>
           </div>
@@ -27,7 +27,7 @@ export default function ComponentInput() {
           <div className="col-1">
             <button>Delete</button>
           </div>
-          <div className="col-3">
+          <div className="col-4">
             <p>Chicken</p>
           </div>
           <div className="col-1">
@@ -47,7 +47,7 @@ export default function ComponentInput() {
           <div className="col-1">
             <button>Delete</button>
           </div>
-          <div className="col-3">
+          <div className="col-4">
             <p>Roast Potatoes</p>
           </div>
           <div className="col-1">
@@ -67,7 +67,7 @@ export default function ComponentInput() {
           <div className="col-1">
             <button>Delete</button>
           </div>
-          <div className="col-3">
+          <div className="col-4">
             <p>Parsnips</p>
           </div>
           <div className="col-1">

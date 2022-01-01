@@ -3,7 +3,7 @@ import "./TimeInput.css";
 
 export default function TimeInput() {
   return (
-    <div className="time-input-module">
+    <div className="TimeInput">
       <form>
         <select name="time" id="time-select">
           <option value="">--Please choose an option--</option>
