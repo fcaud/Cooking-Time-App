@@ -28,6 +28,12 @@
   border-radius: 4px;
   background-color: #97bfb4;
   border: none;
+  transition: 50ms ease-in-out;
+}
+
+.TaskList .alarm-button:hover {
+  background: linear-gradient(325deg, #d4f0e8, #97bfb4, #97bfb4, #d4f0e8);
+  color: #800e2e;
 }
 
 .TaskList .note-button {
@@ -36,4 +42,10 @@
   border-radius: 4px;
   background-color: #97bfb4;
   border: none;
+  transition: 50ms ease-in-out;
+}
+
+.TaskList .note-button:hover {
+  background: linear-gradient(325deg, #d4f0e8, #97bfb4, #97bfb4, #d4f0e8);
+  color: #800e2e;
 }

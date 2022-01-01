@@ -98,6 +98,7 @@ export default function ComponentInput() {
           </div>
         </div>
       </div>
+      <button>Save Recipe</button>
     </div>
   );
 }
