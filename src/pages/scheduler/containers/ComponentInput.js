@@ -3,10 +3,19 @@ import "./ComponentInput.css";
 import { useSelector } from "react-redux";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
+import { useDispatch } from "react-redux";
+import { addMealComponent } from "../store/mealComponentSlice";
 
 export default function ComponentInput() {
+  const dispatch = useDispatch();
   const mealComponents = useSelector((state) => state.mealComponents);
-
+  const onSubmit = (value) => {
+    dispatch(
+      addMealComponent({
+        title: value,
+      })
+    );
+  };
   return (
     <div className="ComponentInput">
       <ItemSearch />
@@ -30,6 +39,7 @@ export default function ComponentInput() {
             prep={mealComponent.prepTime}
             cook={mealComponent.cookTime}
             post={mealComponent.postCookTime}
+            onSubmit={onSubmit}
           />
         ))}
       </div>

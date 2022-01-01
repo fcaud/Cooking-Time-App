@@ -1,23 +1,14 @@
 import React, { useState } from "react";
 import "./ItemSearch.css";
-import { useDispatch } from "react-redux";
-import { addMealComponent } from "../store/mealComponentSlice";
 
-export default function ItemSearch() {
+export default function ItemSearch({ onAddMealComponent }) {
   const [value, setValue] = useState("");
-  const dispatch = useDispatch();
-
   const onSubmit = (event) => {
     event.preventDefault();
     if (value) {
-      dispatch(
-        addMealComponent({
-          title: value,
-        })
-      );
+      onAddMealComponent(value);
     }
   };
-
   return (
     <div className="ItemSearch">
       <form className="component-input-form" onSubmit={onSubmit}>
