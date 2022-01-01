@@ -24,7 +24,7 @@ export default function TaskList() {
         </div>
         <div className="row">
           <div className="col-1">
-            <button>
+            <button className="alarm-button">
               <FontAwesomeIcon icon={Icons.faBell} />
             </button>
           </div>
@@ -38,14 +38,14 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>
+            <button className="note-button">
               <FontAwesomeIcon icon={Icons.faStickyNote} />
             </button>
           </div>
         </div>
         <div className="row">
           <div className="col-1">
-            <button>
+            <button className="alarm-button">
               <FontAwesomeIcon icon={Icons.faBellSlash} />
             </button>
           </div>
@@ -59,14 +59,14 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>
+            <button className="note-button">
               <FontAwesomeIcon icon={Icons.faStickyNote} />
             </button>
           </div>
         </div>
         <div className="row">
           <div className="col-1">
-            <button>
+            <button className="alarm-button">
               <FontAwesomeIcon icon={Icons.faBell} />
             </button>
           </div>
@@ -80,7 +80,7 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>
+            <button className="note-button">
               <FontAwesomeIcon icon={Icons.faStickyNote} />
             </button>
           </div>

@@ -1,7 +1,9 @@
 .TimeInput {
   max-width: 700px;
   display: block;
-  margin: 0 auto;
+  margin: 12px auto;
+  padding: 15px 10px;
   background-color: #97bfb4;
   color: #4f091d;
+  border-radius: 15px;
 }

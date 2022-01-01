@@ -1,14 +1,21 @@
 .Header {
   max-width: 700px;
   display: block;
-  margin: 0 auto;
+  margin: 15px auto;
   background-color: #97bfb4;
   color: #dd4a48;
+  border-radius: 15px;
 }
 .Header h1 {
   font-family: "Pushster", cursive;
+  padding-top: 25px;
+  margin: 0;
+  font-size: 60px;
 }
 
 .Header h2 {
   color: #f5eedc;
+  padding-bottom: 25px;
+  font-weight: 800;
+  font-size: 35px;
 }
