@@ -1,17 +1,15 @@
 import React from "react";
 import "./ComponentInput.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import * as Icons from "@fortawesome/free-solid-svg-icons";
+import { useSelector } from "react-redux";
+import ItemSearch from "../components/ItemSearch";
+import ListItem from "../components/ListItem";
 
 export default function ComponentInput() {
+  const mealComponents = useSelector((state) => state.mealComponents);
+
   return (
     <div className="ComponentInput">
-      <div className="component-text-input">
-        <form className="component-input-form">
-          <input type="text" placeholder="Type meal component here..."></input>
-          <input type="submit" value="Add component"></input>
-        </form>
-      </div>
+      <ItemSearch />
       <div className="component-time-inputs">
         <div className="row">
           <div className="col-5"></div>
@@ -25,78 +23,15 @@ export default function ComponentInput() {
             <h3>Post Cook Time</h3>
           </div>
         </div>
-        <div className="row">
-          <div className="col-1">
-            <button className="delete-button">
-              <FontAwesomeIcon icon={Icons.faTrash} />
-            </button>
-          </div>
-          <div className="col-4">
-            <p>Chicken</p>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-1">
-            <button className="note-button">
-              <FontAwesomeIcon icon={Icons.faStickyNote} />
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-1">
-            <button className="delete-button">
-              <FontAwesomeIcon icon={Icons.faTrash} />
-            </button>
-          </div>
-          <div className="col-4">
-            <p>Roast Potatoes</p>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-1">
-            <button className="note-button">
-              <FontAwesomeIcon icon={Icons.faStickyNote} />
-            </button>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-1">
-            <button className="delete-button">
-              <FontAwesomeIcon icon={Icons.faTrash} />
-            </button>
-          </div>
-          <div className="col-4">
-            <p>Parsnips</p>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-2">
-            <input type="time"></input>
-          </div>
-          <div className="col-1">
-            <button className="note-button">
-              <FontAwesomeIcon icon={Icons.faStickyNote} />
-            </button>
-          </div>
-        </div>
+        {mealComponents.map((mealComponent) => (
+          <ListItem
+            id={mealComponent.id}
+            title={mealComponent.title}
+            prep={mealComponent.prepTime}
+            cook={mealComponent.cookTime}
+            post={mealComponent.postCookTime}
+          />
+        ))}
       </div>
       <button className="save-recipe-button">Save Recipe</button>
     </div>

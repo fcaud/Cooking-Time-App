@@ -17,37 +17,6 @@
   font-size: 17px;
 }
 
-.ComponentInput .component-input-form {
-  display: flex;
-}
-
-.ComponentInput input[type="text"] {
-  flex-grow: 2;
-  border-radius: 4px;
-  background: #f5eedc;
-  border: 2px solid #f5eedc;
-  color: #4f091d;
-  font-weight: 600;
-  transition: 50ms ease-in-out;
-  margin: 10px 5px;
-}
-
-.ComponentInput input[type="submit"] {
-  border-radius: 4px;
-  background: #97bfb4;
-  border: 2px solid #f5eedc;
-  color: #f5eedc;
-  font-weight: 600;
-  transition: 50ms ease-in-out;
-  flex-grow: 1;
-  margin: 10px 5px;
-  height: fit-content;
-}
-.ComponentInput input[type="submit"]:hover {
-  background: #f5eedc;
-  color: #800e2e;
-}
-
 .ComponentInput input[type="time"] {
   border-radius: 4px;
   background: #f5eedc;
