@@ -1,5 +1,7 @@
 import React from "react";
 import "./TaskList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import * as Icons from "@fortawesome/free-solid-svg-icons";
 
 export default function TaskList() {
   return (
@@ -22,7 +24,9 @@ export default function TaskList() {
         </div>
         <div className="row">
           <div className="col-1">
-            <button>toggle alarm</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faBell} />
+            </button>
           </div>
           <div className="col-5">
             <p>Prep Chicken</p>
@@ -34,12 +38,16 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>Note</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faStickyNote} />
+            </button>
           </div>
         </div>
         <div className="row">
           <div className="col-1">
-            <button>toggle alarm</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faBellSlash} />
+            </button>
           </div>
           <div className="col-5">
             <p>Cook Chicken</p>
@@ -51,12 +59,16 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>Note</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faStickyNote} />
+            </button>
           </div>
         </div>
         <div className="row">
           <div className="col-1">
-            <button>toggle alarm</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faBell} />
+            </button>
           </div>
           <div className="col-5">
             <p>Prep Roast Potatoes</p>
@@ -68,7 +80,9 @@ export default function TaskList() {
             <input type="checkbox"></input>
           </div>
           <div className="col-1">
-            <button>Note</button>
+            <button>
+              <FontAwesomeIcon icon={Icons.faStickyNote} />
+            </button>
           </div>
         </div>
       </div>
