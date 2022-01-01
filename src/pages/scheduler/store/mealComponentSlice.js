@@ -35,6 +35,7 @@ export const mealComponentSlice = createSlice({
         cookTime: "00:00",
         postCookTime: "00:00",
       };
+      state.push(mealComponent);
     },
   },
 });
