@@ -7,3 +7,51 @@
   color: #4f091d;
   border-radius: 15px;
 }
+
+.TimeInput form {
+  display: flex;
+}
+
+.TimeInput select {
+  border-radius: 4px;
+  background: #f5eedc;
+  border: 2px solid #f5eedc;
+  color: #4f091d;
+  transition: 50ms ease-in-out;
+  text-align: center;
+  margin: 10px 5px;
+  height: fit-content;
+  flex-grow: 1;
+}
+
+.TimeInput input[type="time"] {
+  border-radius: 4px;
+  background: #f5eedc;
+  border: 2px solid #f5eedc;
+  color: #4f091d;
+  transition: 50ms ease-in-out;
+  text-align: center;
+  margin: 10px 5px;
+  height: fit-content;
+  flex-grow: 4;
+}
+
+.TimeInput input[type="submit"] {
+  border-radius: 4px;
+  background: #97bfb4;
+  border: 2px solid #f5eedc;
+  color: #f5eedc;
+  font-weight: 600;
+  transition: 50ms ease-in-out;
+  flex-grow: 2;
+  margin: 10px 5px;
+  height: fit-content;
+}
+.TimeInput input[type="submit"]:hover {
+  background: #f5eedc;
+  color: #800e2e;
+}
+
+.TimeInput input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}

@@ -86,7 +86,6 @@ export default function TaskList() {
           </div>
         </div>
       </div>
-      <button>Save Recipe</button>
     </div>
   );
 }

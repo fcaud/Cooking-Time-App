@@ -17,6 +17,46 @@
   font-size: 17px;
 }
 
+.ComponentInput .component-input-form {
+  display: flex;
+}
+
+.ComponentInput input[type="text"] {
+  flex-grow: 2;
+  border-radius: 4px;
+  background: #f5eedc;
+  border: 2px solid #f5eedc;
+  color: #4f091d;
+  font-weight: 600;
+  transition: 50ms ease-in-out;
+  margin: 10px 5px;
+}
+
+.ComponentInput input[type="submit"] {
+  border-radius: 4px;
+  background: #97bfb4;
+  border: 2px solid #f5eedc;
+  color: #f5eedc;
+  font-weight: 600;
+  transition: 50ms ease-in-out;
+  flex-grow: 1;
+  margin: 10px 5px;
+  height: fit-content;
+}
+.ComponentInput input[type="submit"]:hover {
+  background: #f5eedc;
+  color: #800e2e;
+}
+
+.ComponentInput input[type="time"] {
+  border-radius: 4px;
+  background: #f5eedc;
+  border: 2px solid #f5eedc;
+  color: #4f091d;
+  transition: 50ms ease-in-out;
+  text-align: center;
+}
+
 .ComponentInput .delete-button {
   color: #4f091d;
   font-size: 15px;
@@ -42,4 +82,23 @@
 .ComponentInput .note-button:hover {
   background: linear-gradient(325deg, #d4f0e8, #97bfb4, #97bfb4, #d4f0e8);
   color: #800e2e;
+}
+
+.ComponentInput .save-recipe-button {
+  border-radius: 4px;
+  background: #97bfb4;
+
+  border: 2px solid #f5eedc;
+  color: #f5eedc;
+  font-weight: 600;
+  transition: 50ms ease-in-out;
+}
+
+.ComponentInput .save-recipe-button:hover {
+  background: #f5eedc;
+  color: #800e2e;
+}
+
+.ComponentInput input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
 }

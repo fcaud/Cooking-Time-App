@@ -7,7 +7,7 @@ export default function ComponentInput() {
   return (
     <div className="ComponentInput">
       <div className="component-text-input">
-        <form>
+        <form className="component-input-form">
           <input type="text" placeholder="Type meal component here..."></input>
           <input type="submit" value="Add component"></input>
         </form>
@@ -98,7 +98,7 @@ export default function ComponentInput() {
           </div>
         </div>
       </div>
-      <button>Save Recipe</button>
+      <button className="save-recipe-button">Save Recipe</button>
     </div>
   );
 }

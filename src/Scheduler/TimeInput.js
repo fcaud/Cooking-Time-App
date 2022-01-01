@@ -6,7 +6,7 @@ export default function TimeInput() {
     <div className="TimeInput">
       <form>
         <select name="time" id="time-select">
-          <option value="">--Please choose an option--</option>
+          <option value="">--Select--</option>
           <option value="start">Start time</option>
           <option value="end">End Time</option>
         </select>
