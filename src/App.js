@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ComponentInput from "./pages/scheduler/components/ComponentInput";
-import TimeInput from "./pages/scheduler/components/TimeInput";
-import TaskList from "./pages/scheduler/components/TaskList";
-import Header from "./pages/scheduler/components/Header";
+import ComponentInput from "./pages/scheduler/containers/ComponentInput";
+import TimeInput from "./pages/scheduler/containers/TimeInput";
+import TaskList from "./pages/scheduler/containers/TaskList";
+import Header from "./pages/scheduler/containers/Header";
 
 function App() {
   return (
