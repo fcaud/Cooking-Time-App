@@ -37,8 +37,14 @@ export const mealComponentSlice = createSlice({
       };
       state.push(mealComponent);
     },
+    deleteMealComponent: (state, action) => {
+      return state.filter(
+        (mealComponent) => mealComponent.id !== action.payload
+      );
+    },
   },
 });
 
-export const { addMealComponent } = mealComponentSlice.actions;
+export const { addMealComponent, deleteMealComponent } =
+  mealComponentSlice.actions;
 export default mealComponentSlice.reducer;

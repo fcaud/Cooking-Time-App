@@ -3,12 +3,21 @@ import "./ListItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 
-export default function ListItem({ title, ...rest }) {
+export default function ListItem({
+  title,
+  id,
+  onDeleteMealComponent,
+  ...rest
+}) {
+  const onClick = () => {
+    onDeleteMealComponent(id);
+  };
+
   return (
     <div className="ListItem">
       <div className="row">
         <div className="col-1">
-          <button className="delete-button">
+          <button className="delete-button" onClick={onClick}>
             <FontAwesomeIcon icon={Icons.faTrash} />
           </button>
         </div>

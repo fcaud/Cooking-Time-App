@@ -5,7 +5,10 @@ import TimeInput from "../components/TimeInput";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
 import { useDispatch } from "react-redux";
-import { addMealComponent } from "../store/mealComponentSlice";
+import {
+  addMealComponent,
+  deleteMealComponent,
+} from "../store/mealComponentSlice";
 
 export default function ComponentInput() {
   const dispatch = useDispatch();
@@ -17,10 +20,13 @@ export default function ComponentInput() {
       })
     );
   };
+  const onDeleteMealComponent = (id) => {
+    dispatch(deleteMealComponent(id));
+  };
   return (
     <div className="ComponentInput">
       <TimeInput />
-      <ItemSearch />
+      <ItemSearch onAddMealComponent={onAddMealComponent} />
       <div className="component-time-inputs">
         <div className="row">
           <div className="col-5"></div>
@@ -36,12 +42,13 @@ export default function ComponentInput() {
         </div>
         {mealComponents.map((mealComponent) => (
           <ListItem
+            key={mealComponent.id}
             id={mealComponent.id}
             title={mealComponent.title}
             prep={mealComponent.prepTime}
             cook={mealComponent.cookTime}
             post={mealComponent.postCookTime}
-            onAddMealComponent={onAddMealComponent}
+            onDeleteMealComponent={onDeleteMealComponent}
           />
         ))}
       </div>
