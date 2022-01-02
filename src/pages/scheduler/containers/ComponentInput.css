@@ -26,6 +26,21 @@
   text-align: center;
 }
 
+.ComponentInput button {
+  border-radius: 4px;
+  background: #97bfb4;
+  margin: 5px 5px;
+  border: 2px solid #f5eedc;
+  color: #f5eedc;
+  font-weight: 600;
+  transition: 50ms ease-in-out;
+}
+
+.ComponentInput button:hover {
+  background: #f5eedc;
+  color: #800e2e;
+}
+
 .ComponentInput .delete-button {
   color: #4f091d;
   font-size: 15px;
@@ -50,21 +65,6 @@
 
 .ComponentInput .note-button:hover {
   background: linear-gradient(325deg, #d4f0e8, #97bfb4, #97bfb4, #d4f0e8);
-  color: #800e2e;
-}
-
-.ComponentInput .save-recipe-button {
-  border-radius: 4px;
-  background: #97bfb4;
-
-  border: 2px solid #f5eedc;
-  color: #f5eedc;
-  font-weight: 600;
-  transition: 50ms ease-in-out;
-}
-
-.ComponentInput .save-recipe-button:hover {
-  background: #f5eedc;
   color: #800e2e;
 }
 

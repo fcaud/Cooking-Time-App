@@ -11,7 +11,6 @@ export default function TimeInput() {
           <option value="end">End Time</option>
         </select>
         <input type="time"></input>
-        <input type="submit" value="Cook!"></input>
       </form>
     </div>
   );

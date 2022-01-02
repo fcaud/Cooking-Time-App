@@ -1,8 +1,6 @@
 .TimeInput {
   max-width: 700px;
   display: block;
-  margin: 12px auto;
-  padding: 15px 10px;
   background-color: #97bfb4;
   color: #4f091d;
   border-radius: 15px;
@@ -19,7 +17,7 @@
   color: #4f091d;
   transition: 50ms ease-in-out;
   text-align: center;
-  margin: 10px 5px;
+  margin: 5px 5px;
   height: fit-content;
   flex-grow: 1;
 }
@@ -31,25 +29,9 @@
   color: #4f091d;
   transition: 50ms ease-in-out;
   text-align: center;
-  margin: 10px 5px;
+  margin: 5px 5px;
   height: fit-content;
   flex-grow: 4;
-}
-
-.TimeInput input[type="submit"] {
-  border-radius: 4px;
-  background: #97bfb4;
-  border: 2px solid #f5eedc;
-  color: #f5eedc;
-  font-weight: 600;
-  transition: 50ms ease-in-out;
-  flex-grow: 2;
-  margin: 10px 5px;
-  height: fit-content;
-}
-.TimeInput input[type="submit"]:hover {
-  background: #f5eedc;
-  color: #800e2e;
 }
 
 .TimeInput input[type="time"]::-webkit-calendar-picker-indicator {

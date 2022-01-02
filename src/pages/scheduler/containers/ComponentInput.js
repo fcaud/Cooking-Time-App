@@ -1,6 +1,7 @@
 import React from "react";
 import "./ComponentInput.css";
 import { useSelector } from "react-redux";
+import TimeInput from "../components/TimeInput";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
 import { useDispatch } from "react-redux";
@@ -9,7 +10,7 @@ import { addMealComponent } from "../store/mealComponentSlice";
 export default function ComponentInput() {
   const dispatch = useDispatch();
   const mealComponents = useSelector((state) => state.mealComponents);
-  const onSubmit = (value) => {
+  const onAddMealComponent = (value) => {
     dispatch(
       addMealComponent({
         title: value,
@@ -18,6 +19,7 @@ export default function ComponentInput() {
   };
   return (
     <div className="ComponentInput">
+      <TimeInput />
       <ItemSearch />
       <div className="component-time-inputs">
         <div className="row">
@@ -39,10 +41,11 @@ export default function ComponentInput() {
             prep={mealComponent.prepTime}
             cook={mealComponent.cookTime}
             post={mealComponent.postCookTime}
-            onSubmit={onSubmit}
+            onAddMealComponent={onAddMealComponent}
           />
         ))}
       </div>
+      <button className="cook-button">Cook!</button>
       <button className="save-recipe-button">Save Recipe</button>
     </div>
   );
