@@ -1,10 +1,9 @@
 import React from "react";
 import "./ComponentInput.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import TimeInput from "../components/TimeInput";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
-import { useDispatch } from "react-redux";
 import {
   addMealComponent,
   deleteMealComponent,
@@ -52,7 +51,9 @@ export default function ComponentInput() {
           />
         ))}
       </div>
-      <button className="cook-button">Cook!</button>
+      <button className="cook-button" onClick={console.log("click")}>
+        Cook!
+      </button>
       <button className="save-recipe-button">Save Recipe</button>
     </div>
   );

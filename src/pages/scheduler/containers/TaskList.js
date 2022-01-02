@@ -1,17 +1,20 @@
 import React from "react";
 import "./TaskList.css";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as Icons from "@fortawesome/free-solid-svg-icons";
 
 export default function TaskList() {
+  const startEndTime = useSelector((state) => state.startEndTime);
+
   return (
     <div className="TaskList">
       <div className="row">
         <div className="col">
-          <h2>Start Time: 12:00</h2>
+          <h2>Start Time: {startEndTime[0].startTime}</h2>
         </div>
         <div className="col">
-          <h2>End Time: 16:00</h2>
+          <h2>End Time: {startEndTime[0].endTime}</h2>
         </div>
         <div className="row">
           <div className="col-1"></div>
