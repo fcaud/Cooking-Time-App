@@ -11,10 +11,10 @@ export default function TaskList() {
     <div className="TaskList">
       <div className="row">
         <div className="col">
-          <h2>Start Time: {startEndTime[0].startTime}</h2>
+          <h2>Start Time: {startEndTime.startTime}</h2>
         </div>
         <div className="col">
-          <h2>End Time: {startEndTime[0].endTime}</h2>
+          <h2>End Time: {startEndTime.endTime}</h2>
         </div>
         <div className="row">
           <div className="col-1"></div>

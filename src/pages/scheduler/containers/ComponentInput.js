@@ -4,10 +4,12 @@ import { useSelector, useDispatch } from "react-redux";
 import TimeInput from "../components/TimeInput";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
+import CookButton from "../components/CookButton";
 import {
   addMealComponent,
   deleteMealComponent,
 } from "../store/mealComponentSlice";
+import { setStartTime, setEndTime } from "../store/startEndTimeSlice";
 
 export default function ComponentInput() {
   const dispatch = useDispatch();
@@ -21,6 +23,12 @@ export default function ComponentInput() {
   };
   const onDeleteMealComponent = (id) => {
     dispatch(deleteMealComponent(id));
+  };
+  const setStart = (startTime) => {
+    dispatch(setStartTime(startTime));
+  };
+  const setEnd = (endTime) => {
+    dispatch(setEndTime(endTime));
   };
   return (
     <div className="ComponentInput">
@@ -51,9 +59,13 @@ export default function ComponentInput() {
           />
         ))}
       </div>
-      <button className="cook-button" onClick={console.log("click")}>
-        Cook!
-      </button>
+      <CookButton
+        timeSelector="End time"
+        startTime="07:00"
+        endTime="09:00"
+        setStart={setStart}
+        setEnd={setEnd}
+      />
       <button className="save-recipe-button">Save Recipe</button>
     </div>
   );

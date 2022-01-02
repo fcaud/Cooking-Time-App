@@ -8,7 +8,7 @@ export default function TimeInput() {
         <select name="time" id="time-select">
           <option value="">--Select--</option>
           <option value="start">Start time</option>
-          <option value="end">End Time</option>
+          <option value="end">End time</option>
         </select>
         <input type="time"></input>
       </form>
