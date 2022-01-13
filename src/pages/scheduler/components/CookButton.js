@@ -1,17 +1,11 @@
 import React from "react";
 
-export default function CookButton({
-  timeSelector,
-  startTime,
-  endTime,
-  setStart,
-  setEnd,
-}) {
+export default function CookButton({ timeSelector, Time, setStart, setEnd }) {
   const onClick = () => {
     if (timeSelector === "Start time") {
-      setStart(startTime);
+      setStart(Time);
     } else if (timeSelector === "End time") {
-      setEnd(endTime);
+      setEnd(Time);
     }
   };
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ComponentInput.css";
 import { useSelector, useDispatch } from "react-redux";
 import TimeInput from "../components/TimeInput";
@@ -12,6 +12,16 @@ import {
 import { setStartTime, setEndTime } from "../store/startEndTimeSlice";
 
 export default function ComponentInput() {
+  const [time, setTime] = useState("-");
+  const [startOrEnd, setStartOrEnd] = useState("");
+  function timeSelector(startOrEndSelection) {
+    setStartOrEnd(startOrEndSelection);
+  }
+
+  function timeField(timeValue) {
+    setTime(timeValue);
+  }
+
   const dispatch = useDispatch();
   const mealComponents = useSelector((state) => state.mealComponents);
   const onAddMealComponent = (value) => {
@@ -32,7 +42,12 @@ export default function ComponentInput() {
   };
   return (
     <div className="ComponentInput">
-      <TimeInput />
+      <TimeInput
+        timeSelector={(startOrEndSelection) =>
+          timeSelector(startOrEndSelection)
+        }
+        time={(timeValue) => timeField(timeValue)}
+      />
       <ItemSearch onAddMealComponent={onAddMealComponent} />
       <div className="component-time-inputs">
         <div className="row">
@@ -60,9 +75,8 @@ export default function ComponentInput() {
         ))}
       </div>
       <CookButton
-        timeSelector="End time"
-        startTime="07:00"
-        endTime="09:00"
+        timeSelector={startOrEnd}
+        Time={time}
         setStart={setStart}
         setEnd={setEnd}
       />
