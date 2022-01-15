@@ -65,9 +65,6 @@ export default function ComponentInput() {
     dispatch(mealComponentActions.updatePrepCookPostTimes(mealComponents));
   };
 
-  console.log("mealComponentsStoreValue", mealComponentsStoreValue);
-  console.log("mealComponents", mealComponents);
-
   return (
     <div className="ComponentInput">
       <TimeInput
