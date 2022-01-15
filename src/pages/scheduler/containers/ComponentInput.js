@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ComponentInput.css";
 import { useSelector, useDispatch } from "react-redux";
 import TimeInput from "../components/TimeInput";
@@ -17,6 +17,34 @@ export default function ComponentInput() {
     mealComponentsStoreValue
   );
 
+  useEffect(() => {
+    setMealComponents((currentMealComponent) => {
+      const newMealComponentsValue = mealComponentsStoreValue.map((item) => {
+        const updatedValue = currentMealComponent.find(
+          (stateItem) => stateItem.id === item.id
+        );
+        if (updatedValue) {
+          return updatedValue;
+        } else {
+          return item;
+        }
+      });
+      return newMealComponentsValue;
+    });
+
+    // const newMealComponentsValue = mealComponentsStoreValue.map((item) => {
+    //   const updatedValue = mealComponents.find(
+    //     (stateItem) => stateItem.id === item.id
+    //   );
+    //   if (updatedValue) {
+    //     return updatedValue;
+    //   } else {
+    //     return item;
+    //   }
+    // });
+    // setMealComponents(newMealComponentsValue);
+  }, [mealComponentsStoreValue]);
+
   const onAddMealComponent = (value) => {
     dispatch(
       mealComponentActions.addMealComponent({
@@ -33,15 +61,12 @@ export default function ComponentInput() {
   const setEnd = (endTime) => {
     dispatch(startEndTimeActions.setEndTime(endTime));
   };
-  const setPrep = (prepTime) => {
-    dispatch(mealComponentActions.setPrepTime(prepTime));
+  const setPrepCookPost = (mealComponents) => {
+    dispatch(mealComponentActions.updatePrepCookPostTimes(mealComponents));
   };
-  const setCook = (cookTime) => {
-    dispatch(mealComponentActions.setCookTime(cookTime));
-  };
-  const setPostCook = (postCookTime) => {
-    dispatch(mealComponentActions.setPostCook(postCookTime));
-  };
+
+  console.log("mealComponentsStoreValue", mealComponentsStoreValue);
+  console.log("mealComponents", mealComponents);
 
   return (
     <div className="ComponentInput">
@@ -65,8 +90,8 @@ export default function ComponentInput() {
             <h3>Post Cook Time</h3>
           </div>
         </div>
-        {console.log("mealComponents", mealComponents)}
-        {mealComponents.map((mealComponent) => (
+
+        {mealComponentsStoreValue.map((mealComponent) => (
           <ListItem
             key={mealComponent.id}
             id={mealComponent.id}
@@ -111,11 +136,10 @@ export default function ComponentInput() {
       <CookButton
         timeSelector={startOrEnd}
         time={time}
+        mealUpdates={mealComponents}
         setStart={setStart}
         setEnd={setEnd}
-        setPrep={setPrep}
-        setCook={setCook}
-        setPostCook={setPostCook}
+        setPrepCookPost={setPrepCookPost}
       />
       <button className="save-recipe-button">Save Recipe</button>
     </div>

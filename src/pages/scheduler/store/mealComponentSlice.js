@@ -44,14 +44,39 @@ export const mealComponentSlice = createSlice({
         (mealComponent) => mealComponent.id !== action.payload
       );
     },
-    setPrepTime: (state, action) => {
-      return { ...state, prepTime: action.payload };
-    },
-    setCookTime: (state, action) => {
-      return { ...state, cookTime: action.payload };
-    },
-    setPostCookTime: (state, action) => {
-      return { ...state, postCookTime: action.payload };
+    updatePrepCookPostTimes: (state, action) => {
+      // return action.payload.filter((item) => {
+      //   const doesExistInState = state.some(
+      //     (stateItem) => stateItem.id === item.id
+      //   );
+      //   return doesExistInState;
+      // });
+
+      return state.map((item) => {
+        const newValue = action.payload.find(
+          (payloadItem) => payloadItem.id === item.id
+        );
+        if (newValue) {
+          return {
+            ...item,
+            prepTime: newValue.prepTime,
+            cookTime: newValue.cookTime,
+            postCookTime: newValue.postCookTime,
+          };
+        } else {
+          return item;
+        }
+      });
+      // return state.map((item) => {
+      //   console.log("payload", action);
+      //   console.log("item", item.id);
+      //   return {
+      //     ...item,
+      //     prepTime: action.payload[1].prepTime,
+      //     cookTime: action.payload[1].cookTime,
+      //     postCookTime: action.payload[1].postCookTime,
+      //   };
+      // });
     },
   },
 });
