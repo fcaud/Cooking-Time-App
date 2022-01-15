@@ -12,7 +12,10 @@ export default function ComponentInput() {
   const dispatch = useDispatch();
   const [time, setTime] = useState("-");
   const [startOrEnd, setStartOrEnd] = useState("");
-  const mealComponents = useSelector((state) => state.mealComponents);
+  const mealComponentsStoreValue = useSelector((state) => state.mealComponents);
+  const [mealComponents, setMealComponents] = useState(
+    mealComponentsStoreValue
+  );
 
   const onAddMealComponent = (value) => {
     dispatch(
@@ -62,6 +65,7 @@ export default function ComponentInput() {
             <h3>Post Cook Time</h3>
           </div>
         </div>
+        {console.log("mealComponents", mealComponents)}
         {mealComponents.map((mealComponent) => (
           <ListItem
             key={mealComponent.id}
@@ -71,12 +75,42 @@ export default function ComponentInput() {
             cook={mealComponent.cookTime}
             post={mealComponent.postCookTime}
             onDeleteMealComponent={onDeleteMealComponent}
+            updatedPrep={(updatedTime) => {
+              const updatedObject = mealComponents.map((item) => {
+                if (item.id === mealComponent.id) {
+                  return { ...item, prepTime: updatedTime };
+                } else {
+                  return item;
+                }
+              });
+              setMealComponents(updatedObject);
+            }}
+            updatedCook={(updatedTime) => {
+              const updatedObject = mealComponents.map((item) => {
+                if (item.id === mealComponent.id) {
+                  return { ...item, cookTime: updatedTime };
+                } else {
+                  return item;
+                }
+              });
+              setMealComponents(updatedObject);
+            }}
+            updatedPostCook={(updatedTime) => {
+              const updatedObject = mealComponents.map((item) => {
+                if (item.id === mealComponent.id) {
+                  return { ...item, postCookTime: updatedTime };
+                } else {
+                  return item;
+                }
+              });
+              setMealComponents(updatedObject);
+            }}
           />
         ))}
       </div>
       <CookButton
         timeSelector={startOrEnd}
-        Time={time}
+        time={time}
         setStart={setStart}
         setEnd={setEnd}
         setPrep={setPrep}

@@ -25,13 +25,28 @@ export default function ListItem({
           <p>{title}</p>
         </div>
         <div className="col-2">
-          <input type="time"></input>
+          <input
+            type="time"
+            onChange={(event) => {
+              rest.updatedPrep(event.target.value);
+            }}
+          ></input>
         </div>
         <div className="col-2">
-          <input type="time"></input>
+          <input
+            type="time"
+            onChange={(event) => {
+              rest.updatedCook(event.target.value);
+            }}
+          ></input>
         </div>
         <div className="col-2">
-          <input type="time"></input>
+          <input
+            type="time"
+            onChange={(event) => {
+              rest.updatedPostCook(event.target.value);
+            }}
+          ></input>
         </div>
         <div className="col-1">
           <button className="note-button">
