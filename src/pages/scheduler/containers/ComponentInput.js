@@ -5,48 +5,48 @@ import TimeInput from "../components/TimeInput";
 import ItemSearch from "../components/ItemSearch";
 import ListItem from "../components/ListItem";
 import CookButton from "../components/CookButton";
-import {
-  addMealComponent,
-  deleteMealComponent,
-} from "../store/mealComponentSlice";
-import { setStartTime, setEndTime } from "../store/startEndTimeSlice";
+import { actions as mealComponentActions } from "../store/mealComponentSlice";
+import { actions as startEndTimeActions } from "../store/startEndTimeSlice";
 
 export default function ComponentInput() {
+  const dispatch = useDispatch();
   const [time, setTime] = useState("-");
   const [startOrEnd, setStartOrEnd] = useState("");
-  function timeSelector(startOrEndSelection) {
-    setStartOrEnd(startOrEndSelection);
-  }
-
-  function timeField(timeValue) {
-    setTime(timeValue);
-  }
-
-  const dispatch = useDispatch();
   const mealComponents = useSelector((state) => state.mealComponents);
+
   const onAddMealComponent = (value) => {
     dispatch(
-      addMealComponent({
+      mealComponentActions.addMealComponent({
         title: value,
       })
     );
   };
   const onDeleteMealComponent = (id) => {
-    dispatch(deleteMealComponent(id));
+    dispatch(mealComponentActions.deleteMealComponent(id));
   };
   const setStart = (startTime) => {
-    dispatch(setStartTime(startTime));
+    dispatch(startEndTimeActions.setStartTime(startTime));
   };
   const setEnd = (endTime) => {
-    dispatch(setEndTime(endTime));
+    dispatch(startEndTimeActions.setEndTime(endTime));
   };
+  const setPrep = (prepTime) => {
+    dispatch(mealComponentActions.setPrepTime(prepTime));
+  };
+  const setCook = (cookTime) => {
+    dispatch(mealComponentActions.setCookTime(cookTime));
+  };
+  const setPostCook = (postCookTime) => {
+    dispatch(mealComponentActions.setPostCook(postCookTime));
+  };
+
   return (
     <div className="ComponentInput">
       <TimeInput
         timeSelector={(startOrEndSelection) =>
-          timeSelector(startOrEndSelection)
+          setStartOrEnd(startOrEndSelection)
         }
-        time={(timeValue) => timeField(timeValue)}
+        time={(timeValue) => setTime(timeValue)}
       />
       <ItemSearch onAddMealComponent={onAddMealComponent} />
       <div className="component-time-inputs">
@@ -79,6 +79,9 @@ export default function ComponentInput() {
         Time={time}
         setStart={setStart}
         setEnd={setEnd}
+        setPrep={setPrep}
+        setCook={setCook}
+        setPostCook={setPostCook}
       />
       <button className="save-recipe-button">Save Recipe</button>
     </div>

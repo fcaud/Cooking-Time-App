@@ -13,5 +13,5 @@ export const startEndTimeSlice = createSlice({
   },
 });
 
-export const { setStartTime, setEndTime } = startEndTimeSlice.actions;
+export const { actions } = startEndTimeSlice;
 export default startEndTimeSlice.reducer;
