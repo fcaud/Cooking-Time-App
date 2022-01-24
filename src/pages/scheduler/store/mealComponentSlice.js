@@ -57,11 +57,24 @@ export const mealComponentSlice = createSlice({
           (payloadItem) => payloadItem.id === item.id
         );
         if (newValue) {
+          const splitPrepTime = newValue.prepTime.split(":");
+          const splitCookTime = newValue.cookTime.split(":");
+          const splitPostCookTime = newValue.postCookTime.split(":");
+          const totalHours =
+            Number(splitPrepTime[0]) +
+            Number(splitCookTime[0]) +
+            Number(splitPostCookTime[0]);
+          const totalMins =
+            Number(splitPrepTime[1]) +
+            Number(splitCookTime[1]) +
+            Number(splitPostCookTime[1]);
+
           return {
             ...item,
             prepTime: newValue.prepTime,
             cookTime: newValue.cookTime,
             postCookTime: newValue.postCookTime,
+            totalTime: totalHours + ":" + totalMins,
           };
         } else {
           return item;

@@ -1,7 +1,4 @@
 <!-- prettier-ignore -->
-- updating prep, cook, postCook times for each meal component item 
-    - onclick on cook button 
-    - retrieve time data from ListItem component for each meal component item
 - Calculate total time and missing start/end time and embed on page
 - Calculate start times for each list items prep, cook and postCook stages
 - embed list items on page from onclick of 'Cook!' button
